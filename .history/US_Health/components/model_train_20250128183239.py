@@ -20,14 +20,14 @@ class ModelTrain:
         num_col =['age', 'bmi', 'children']
         power_col=['bmi']
         
-        #transform=Pipeline([
-         #   ('transform_pipeline',PowerTransformer(method='yeo-johnson'))
-        #])
+        transform=Pipeline([
+            ('transform_pipeline',PowerTransformer(method='yeo-johnson'))
+        ])
         
         perprocess = ColumnTransformer([
         ('num_pipeline',StandardScaler(),num_col),
         ('cat_pipeline',OneHotEncoder(),cat_col),
-        #('power',transform,power_col,)
+        ('power',transform,power_col,)
         ])
         
         return perprocess
@@ -42,7 +42,7 @@ class ModelTrain:
             lower = Q1-1.5*IQR
             upper = Q3+1.5*IQR
 
-            #print(lower,upper)
+            print(lower,upper)
 
             train_data = train_data[(train_data['bmi'] > lower) & (train_data['bmi'] < upper)]
             

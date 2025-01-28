@@ -28,11 +28,3 @@ class ModelTrainPipeline:
     def Main(self):
         model_train = ModelTrain()
         model_train.after_preprocess()          
-        
-class ModelEvaluationPipeline:
-    def __init__(self):
-        pass
-    
-    def Main(self):
-        model_evaluation = ModelEvaluation()
-        model_evaluation.Predit_model_to_Test_data()        

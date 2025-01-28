@@ -20,31 +20,31 @@ class ModelTrain:
         num_col =['age', 'bmi', 'children']
         power_col=['bmi']
         
-        #transform=Pipeline([
-         #   ('transform_pipeline',PowerTransformer(method='yeo-johnson'))
-        #])
+        transform=Pipeline([
+            ('transform_pipeline',PowerTransformer(method='yeo-johnson'))
+        ])
         
         perprocess = ColumnTransformer([
         ('num_pipeline',StandardScaler(),num_col),
         ('cat_pipeline',OneHotEncoder(),cat_col),
-        #('power',transform,power_col,)
+        ('power',transform,power_col,)
         ])
         
         return perprocess
     def after_preprocess(self):
         try:
             train_data = pd.read_csv(self.model_train.train_data_path)
-            Q1 = np.percentile(train_data['bmi'],0.25)
-            Q3 = np.percentile(train_data['bmi'],0.75)
+            Q1 = np.percentile(data['bmi'],0.25)
+            Q3 = np.percentile(data['bmi'],0.75)
 
             IQR = Q3-Q1
 
             lower = Q1-1.5*IQR
             upper = Q3+1.5*IQR
 
-            #print(lower,upper)
+            print(lower,upper)
 
-            train_data = train_data[(train_data['bmi'] > lower) & (train_data['bmi'] < upper)]
+            data = data[(data['bmi'] > lower) & (data['bmi'] < upper)]
             
             train_X =train_data.drop(columns='charges',axis=1)
             train_y = train_data['charges']

@@ -28,8 +28,6 @@ class ModelEvaluationConfig:
     test_data_path:Path="artifacts/data_transforam/test.csv"
     preprocess_path:Path="artifacts\model_train\preprocess.json"
     model_Path:Path="artifacts\model_train\model.json"   
-    metrics:Path="artifacts\model_train\metrics"
-    
     
          
     

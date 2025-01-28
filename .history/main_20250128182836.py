@@ -25,11 +25,3 @@ try:
     logging.info(">>>>>>>>>>>>>>>>>>>>>>>>>>")
 except Exception as e:
     raise e 
-
-try:
-    logging.info('>>>>>ModelEvaluation>>>>>>>')
-    model_evaluation=ModelEvaluationPipeline()
-    model_evaluation.Main()
-    logging.info(">>>>>>>>>>>>>>>>>>>>>>>>>>")
-except Exception as e:
-    raise e 

@@ -22,7 +22,7 @@ class ModelEvaluation:
         lower = Q1-1.5*IQR
         upper = Q3+1.5*IQR
 
-        #print(lower,upper)
+        print(lower,upper)
 
         test_data = test_data[(test_data['bmi'] > lower) & (test_data['bmi'] < upper)]
                 

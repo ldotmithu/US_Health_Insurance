@@ -14,17 +14,17 @@ class ModelEvaluation:
         
     def Predit_model_to_Test_data(self):
         test_data = pd.read_csv(self.model_evaluation.test_data_path)
-        Q1 = np.percentile(test_data['bmi'],0.25)
-        Q3 = np.percentile(test_data['bmi'],0.75)
+        Q1 = np.percentile(data['bmi'],0.25)
+        Q3 = np.percentile(data['bmi'],0.75)
 
         IQR = Q3-Q1
 
         lower = Q1-1.5*IQR
         upper = Q3+1.5*IQR
 
-        #print(lower,upper)
+        print(lower,upper)
 
-        test_data = test_data[(test_data['bmi'] > lower) & (test_data['bmi'] < upper)]
+        data = data[(data['bmi'] > lower) & (data['bmi'] < upper)]
                 
         test_X = test_data.drop(columns=['charges'],axis=1) 
         test_y = test_data['charges']  
