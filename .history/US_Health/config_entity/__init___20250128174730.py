@@ -22,12 +22,5 @@ class ModelTrainConfig:
     model_name:str="model.json"
     preprocess_name:str="preprocess.json"
     
-@dataclass
-class ModelEvaluationConfig:
-    root_dir:Path="artifacts/model_evaluation"
-    test_data_path:Path="artifacts/data_transforam/test.csv"
-    preprocess_path:Path=""
-    model_Path:Path=""   
-    
          
     

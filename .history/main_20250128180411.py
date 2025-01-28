@@ -11,17 +11,9 @@ except Exception as e:
     raise e 
 
 try:
-    logging.info('>>>>>DataTransform>>>>>>>')
+    logging.info('>>>>>DataIngestion>>>>>>>')
     data_transfomation=DataTransfomationPipeline()
     data_transfomation.Main()
-    logging.info(">>>>>>>>>>>>>>>>>>>>>>>>>>")
-except Exception as e:
-    raise e 
-
-try:
-    logging.info('>>>>>ModelTrain>>>>>>>')
-    model_train=ModelTrainPipeline()
-    model_train.Main()
     logging.info(">>>>>>>>>>>>>>>>>>>>>>>>>>")
 except Exception as e:
     raise e 

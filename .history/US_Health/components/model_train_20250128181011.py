@@ -40,7 +40,7 @@ class ModelTrain:
             
             preprocess_obj = self.preprocess()
             
-            train_X = preprocess_obj.fit_transform(train_X)
+            X_train = preprocess_obj.fit_transform(train_X)
             
             xgb=XGBRegressor()
             xgb.fit(train_X,train_y)

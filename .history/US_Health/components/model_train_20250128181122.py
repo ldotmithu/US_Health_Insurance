@@ -40,10 +40,10 @@ class ModelTrain:
             
             preprocess_obj = self.preprocess()
             
-            train_X = preprocess_obj.fit_transform(train_X)
+            X_train = preprocess_obj.fit_transform(train_X)
             
             xgb=XGBRegressor()
-            xgb.fit(train_X,train_y)
+            xgb.fit(X_train,train_y)
             
             joblib.dump(preprocess_obj,os.path.join(self.model_train.root_dir,self.model_train.preprocess_name))
             logging.info('Preprocess Object save successfully')

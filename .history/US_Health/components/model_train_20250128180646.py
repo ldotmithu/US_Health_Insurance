@@ -18,16 +18,14 @@ class ModelTrain:
         
         cat_col = ['sex','smoker','region']
         num_col =['age', 'bmi', 'children']
-        power_col=['bmi']
+        power_col='bmi'
         
-        transform=Pipeline([
-            ('transform_pipeline',PowerTransformer(method='yeo-johnson'))
-        ])
+        transform=Pipeline
         
         perprocess = ColumnTransformer([
         ('num_pipeline',StandardScaler(),num_col),
         ('cat_pipeline',OneHotEncoder(),cat_col),
-        ('power',transform,power_col,)
+        'power',PowerTransformer(method='yeo-johnson'),power_col,
         ])
         
         return perprocess
@@ -40,7 +38,7 @@ class ModelTrain:
             
             preprocess_obj = self.preprocess()
             
-            train_X = preprocess_obj.fit_transform(train_X)
+            X_train = preprocess_obj.fit_transform(train_X)
             
             xgb=XGBRegressor()
             xgb.fit(train_X,train_y)
