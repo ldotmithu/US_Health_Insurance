@@ -21,5 +21,4 @@ class DataTransfomation:
         train_data.to_csv(os.path.join(self.data_transfomation.root_dir,"train.csv"),index=False)
         
         test_data.to_csv(os.path.join(self.data_transfomation.root_dir,"test.csv"),index=False)
-        logging.info('Train and Test data Save successfully')
            
