@@ -19,7 +19,7 @@ class DataTransfomationConfig:
 class ModelTrainConfig:
     root_dir:Path="artifacts/model_train"
     train_data_path:Path="artifacts/data_transforam/train.csv"
-    model_name:str="model.pkl"
+    model_name:str="model.json"
     preprocess_name:str="preprocess.pkl"
     
 @dataclass
